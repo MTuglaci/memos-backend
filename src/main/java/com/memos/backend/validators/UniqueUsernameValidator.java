@@ -1,7 +1,7 @@
 package com.memos.backend.validators;
 
 import com.memos.backend.annotations.UniqueUsername;
-import com.memos.backend.repositories.UserRepository;
+import com.memos.backend.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.validation.ConstraintValidator;
@@ -14,6 +14,6 @@ public class UniqueUsernameValidator implements ConstraintValidator<UniqueUserna
 
     @Override
     public boolean isValid(String username, ConstraintValidatorContext constraintValidatorContext) {
-        return userRepository.findByUsername(username) == null ? true : false;
+        return userRepository.findByUsername(username) == null;
     }
 }

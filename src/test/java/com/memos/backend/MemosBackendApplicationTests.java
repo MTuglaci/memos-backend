@@ -1,6 +1,6 @@
 package com.memos.backend;
 
-import com.memos.backend.repositories.UserRepository;
+import com.memos.backend.user.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

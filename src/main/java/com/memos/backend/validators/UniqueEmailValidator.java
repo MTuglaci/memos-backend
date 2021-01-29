@@ -1,7 +1,7 @@
 package com.memos.backend.validators;
 
 import com.memos.backend.annotations.UniqueEmail;
-import com.memos.backend.repositories.UserRepository;
+import com.memos.backend.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.validation.ConstraintValidator;
@@ -15,7 +15,7 @@ public class UniqueEmailValidator implements ConstraintValidator<UniqueEmail, St
     @Override
     public boolean isValid(String email, ConstraintValidatorContext constraintValidatorContext) {
 
-        return userRepository.findByEmail(email) == null ? true : false;
+        return userRepository.findByEmail(email) == null;
 
     }
 }
